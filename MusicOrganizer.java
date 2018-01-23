@@ -152,6 +152,16 @@ public class MusicOrganizer
     }
 
     /**
+     * Cambia el album de una cancion
+     * @param index La posicion de la cancion en la coleccion.
+     * @param album El album nuevo.
+     */
+    public void setAlbum(int index, String album) {
+        if(indexValid(index)) {
+            tracks.get(index).setAlbum(album);
+        }
+    }
+    /**
      * Determine whether the given index is valid for the collection.
      * Print an error message if it is not.
      * @param index The index to be checked.

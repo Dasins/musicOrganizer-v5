@@ -11,6 +11,8 @@ public class Track
     private String artist;
     // The track's title.
     private String title;
+    // El album de la cancion.
+    private String album;
     // Where the track is stored.
     private String filename;
     // Numero de veces que ha sido reproducida.
@@ -25,7 +27,6 @@ public class Track
     public Track(String artist, String title, String filename)
     {
         setDetails(artist, title, filename);
-        playCount = 0;
     }
     
     /**
@@ -37,7 +38,6 @@ public class Track
     public Track(String filename)
     {
         setDetails("unknown", "unknown", filename);
-        playCount = 0;
     }
     
     /**
@@ -56,6 +56,14 @@ public class Track
     public String getTitle()
     {
         return title;
+    }
+    
+    /**
+     * Devuelve el album.
+     * @return El album.
+     */
+    public String getAlbum() {
+        return album;
     }
     
     /**
@@ -81,7 +89,7 @@ public class Track
      */
     public String getDetails()
     {
-        return artist + ": " + title + "  (file: " + filename + ") reproduciones: " + playCount;
+        return artist + ": " + title + " - " + album + "(file: " + filename + ") reproduciones: " + playCount;
     }
     
     /**
@@ -95,6 +103,16 @@ public class Track
         this.artist = artist;
         this.title = title;
         this.filename = filename;
+        this.album = "";
+        playCount = 0;
+    }
+    
+    /**
+     * Cambia el album de la cancion.
+     * @param album El nombre del nuevo album
+     */
+    public void setAlbum(String album) {
+        this.album = album;
     }
     
     /**
