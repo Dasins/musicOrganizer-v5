@@ -56,7 +56,10 @@ public class MusicOrganizer
      */
     public void playTrack(int index)
     {
-        if(indexValid(index)) {
+        if(reproduciendo) {
+            System.out.println("Hay una reproduccion en curso.");
+        }
+        else if(indexValid(index)) {
             Track track = tracks.get(index);
             track.increasePlayCount();
             player.startPlaying(track.getFilename());
@@ -154,7 +157,10 @@ public class MusicOrganizer
      */
     public void playFirst()
     {
-        if(tracks.size() > 0) {
+        if(reproduciendo) {
+            System.out.println("Hay una reproduccion en curso.");
+        }
+        else if(tracks.size() > 0) {
             Track track = tracks.get(0);
             track.increasePlayCount();
             player.startPlaying(track.getFilename());
