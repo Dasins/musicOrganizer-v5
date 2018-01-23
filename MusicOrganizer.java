@@ -231,4 +231,15 @@ public class MusicOrganizer
             System.out.println(track.getDetails());
         }
     }
+    
+    public void removeByArtist(String artistaABorrar) {
+        Iterator<Track> it = tracks.iterator();
+        while(it.hasNext()) {
+            Track track = it.next();
+            String artista = track.getArtist();
+            if(artista.equals(artistaABorrar)) {
+                it.remove();
+            }
+        }
+    }
 }
