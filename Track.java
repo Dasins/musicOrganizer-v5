@@ -125,7 +125,7 @@ public class Track
     /**
      * Incrementa en 1 el numero de reproduciones.
      */
-    public void addPlay() {
+    public void increasePlayCount() {
         playCount++;
     }
     
