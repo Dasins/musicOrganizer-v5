@@ -107,6 +107,19 @@ public class MusicOrganizer
     }
     
     /**
+     * Enumera todas las pistas que contengan la cadena de busqueda.
+     * @param searchString La cadena de busqueda que hay que encontrar.
+     */
+    public void findInTitle(String searchString) {
+        for(Track track : tracks) {
+            String title = track.getTitle();
+            if(title.contains(searchString)) {
+                System.out.println(track.getDetails());
+            }
+        }
+    }
+    
+    /**
      * Remove a track from the collection.
      * @param index The index of the track to be removed.
      */
